@@ -6,6 +6,9 @@ export default {
       localStorage.setItem('locale', locale)
     }
   },
+  SET_SERVER_STATE(state, serverReady) {
+    state.serverReady = serverReady
+  },
   SET_AUTH(state, auth) {
     state.auth = auth
   },

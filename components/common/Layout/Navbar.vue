@@ -18,44 +18,42 @@
     <el-menu-item index="3" :route="{ name: 'secret' }">
       Secret page
     </el-menu-item>
-    <client-only>
-      <!-- Login button -->
-      <el-menu-item
-        v-if="$store.state.auth && $route.path != '/login'"
-        class="mr-3"
-        style="float: right;"
-        :title="$t('navbar.logout')"
-        @click="$store.dispatch('logout')"
-      >
-        {{ $t('navbar.logout') }}
-      </el-menu-item>
-      <el-menu-item
-        v-if="!$store.state.auth && $route.path != '/login'"
-        class="mr-3"
-        style="float: right;"
-        :title="$t('navbar.login')"
-        @click="$root.$emit('showLoginDialog')"
-      >
-        {{ $t('navbar.login') }}
-      </el-menu-item>
-      <!-- i18n button -->
-      <el-menu-item
-        v-if="locale == 'en'"
-        size="sm"
-        style="float: right;"
-        @click="changeLanguage('vi')"
-      >
-        Tiếng Việt
-      </el-menu-item>
-      <el-menu-item
-        v-if="locale == 'vi'"
-        size="sm"
-        style="float: right;"
-        @click="changeLanguage('en')"
-      >
-        English
-      </el-menu-item>
-    </client-only>
+    <!-- Login button -->
+    <el-menu-item
+      v-if="$store.state.auth && $route.path != '/login'"
+      class="mr-3"
+      style="float: right;"
+      :title="$t('navbar.logout')"
+      @click="$store.dispatch('logout')"
+    >
+      {{ $t('navbar.logout') }}
+    </el-menu-item>
+    <el-menu-item
+      v-if="!$store.state.auth && $route.path != '/login'"
+      class="mr-3"
+      style="float: right;"
+      :title="$t('navbar.login')"
+      @click="$root.$emit('showLoginDialog')"
+    >
+      {{ $t('navbar.login') }}
+    </el-menu-item>
+    <!-- i18n button -->
+    <el-menu-item
+      v-if="locale == 'en'"
+      size="sm"
+      style="float: right;"
+      @click="changeLanguage('vi')"
+    >
+      Tiếng Việt
+    </el-menu-item>
+    <el-menu-item
+      v-if="locale == 'vi'"
+      size="sm"
+      style="float: right;"
+      @click="changeLanguage('en')"
+    >
+      English
+    </el-menu-item>
   </el-menu>
 </template>
 

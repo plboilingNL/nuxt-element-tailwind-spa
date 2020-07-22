@@ -21,7 +21,7 @@ export default {
       dialogVisible: false,
     }
   },
-  mounted() {
+  created() {
     // We store this configuration in localStorage because it lasts forever
     this.$i18n.locale = localStorage.getItem('locale')
     this.SET_LANG(localStorage.getItem('locale')) // store in state and localStorage

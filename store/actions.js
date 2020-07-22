@@ -1,19 +1,11 @@
-const cookieparser = process.server ? require('cookieparser') : undefined
-const Cookie = process.client ? require('js-cookie') : undefined
 export default {
-  // This will run first when nuxt app init
-  async nuxtServerInit({ commit }, { req }) {
+  // Called manually in middleware in SPA mode
+  async nuxtServerInit({ commit }) {
     let auth = null
-    // Since we don't have localStorage in server side, we gotta use cookie instead
-    if (req.headers.cookie) {
-      const parsed = await cookieparser.parse(req.headers.cookie)
-      try {
-        auth = JSON.parse(parsed.auth)
-      } catch (err) {
-        // No valid cookie found
-      }
-    }
+    const authString = await localStorage.getItem('auth')
+    auth = await JSON.parse(authString)
     commit('SET_AUTH', auth)
+    commit('SET_SERVER_STATE', true) // Server is ready
   },
   async login({ commit }, form) {
     console.log(form)
@@ -28,11 +20,11 @@ export default {
       // Replace the whole thing with a nice axios request to obtain the auth instance as usual
       // This use a constain as an example
     }, 1000)
-    Cookie.set('auth', auth, { expires: 365 }) // Saving token in cookie for server rendering
+    localStorage.setItem('auth', JSON.stringify(auth))
     commit('SET_AUTH', auth) // Mutating to store for client rendering
   },
-  async logout({ commit }) {
-    await Cookie.remove('auth')
+  logout({ commit }) {
+    localStorage.removeItem('auth')
     commit('SET_AUTH', null)
   },
 }
