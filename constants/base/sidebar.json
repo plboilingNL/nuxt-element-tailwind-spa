@@ -1,0 +1,49 @@
+{
+    "data": [
+        {
+            "title": "sidebar.user.title",
+            "icon": "el-icon-user-solid",
+            "to": "/",
+            "children" : [
+                {
+                    "title": "sidebar.user.available",
+                    "icon": "el-icon-user-solid",
+                    "to": "/users",
+                    "children": [
+                        {
+                            "title": "sidebar.user.list",
+                            "icon": "el-icon-info",
+                            "to": "/users",
+                            "children": []
+                        },
+                        {
+                            "title": "sidebar.user.create",
+                            "icon": "el-icon-circle-plus",
+                            "to": "/users/create",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "title": "sidebar.user.deleted",
+                    "icon": "el-icon-delete-solid",
+                    "to": "/users/deleted",
+                    "children": [
+                        {
+                            "title": "sidebar.user.list",
+                            "icon": "el-icon-info",
+                            "to": "/users/deleted",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "sidebar.settings.title",
+            "icon": "el-icon-s-tools",
+            "to": "/settings",
+            "children": []
+        }
+    ]
+}

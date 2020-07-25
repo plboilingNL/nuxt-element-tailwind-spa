@@ -6,4 +6,7 @@ export default () => ({
   message: 'Hello from state',
   // Auth instance got from api server
   auth: null,
+  options: {
+    sidebarCollapsed: false,
+  },
 })

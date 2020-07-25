@@ -1,12 +1,11 @@
 <template>
-  <div class="container mx-auto">
+  <el-main>
     <h1 class="text-2xl my-3">
       {{ $t('login.title') }}
     </h1>
     <div>
       <FormWrapper @onSubmit="postLogin">
         <InputWrapper rules="required|email">
-          <!--  -->
           <el-input
             v-model="form.email"
             type="email"
@@ -25,7 +24,7 @@
         </el-button>
       </FormWrapper>
     </div>
-  </div>
+  </el-main>
 </template>
 
 <script>
