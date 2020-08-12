@@ -63,7 +63,7 @@
 
 <script>
 import { mapMutations, mapState } from 'vuex'
-import { rootActions, rootMutations } from '~/constants/vuex'
+import { authActions, rootMutations } from '~/constants/vuex'
 export default {
   name: 'Navbar',
   props: {
@@ -89,7 +89,7 @@ export default {
     ...mapState({
       locale: (state) => state.locale,
       options: (state) => state.options,
-      auth: (state) => state.auth,
+      auth: (state) => state.auth.data,
     }),
     avatar() {
       if (this.auth) {
@@ -119,7 +119,7 @@ export default {
       console.log(key, keyPath)
     },
     logout() {
-      this.$store.dispatch(rootActions.LOGOUT)
+      this.$store.dispatch(authActions.LOGOUT)
       this.$router.push('/login')
     },
   },

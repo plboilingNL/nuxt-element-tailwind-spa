@@ -31,8 +31,6 @@
           <nuxt class="relative" keep-alive />
         </transition>
       </div>
-      <!-- el-dialog -->
-      <Login />
       <!-- el-footer -->
       <Footer />
     </el-container>
@@ -42,11 +40,10 @@
 <script>
 import { mapMutations, mapState } from 'vuex'
 import { rootMutations } from '~/constants/vuex'
-import { Login, Navbar, Sidebar, Footer } from '~/components/common'
+import { Navbar, Sidebar, Footer } from '~/components/common'
 export default {
   middleware: ['authRequired'],
   components: {
-    Login,
     Navbar,
     Footer,
     Sidebar,

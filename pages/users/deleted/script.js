@@ -56,8 +56,8 @@ export default {
     onEdit(payload) {
       this.$router.push(`/users/${payload.rowData.id}/edit`)
     },
-    onDelete(payload) {
-      this.deleteUser(payload.rowData.id)
+    async onDelete(payload) {
+      await this.deleteUser(payload.rowData.id)
       this.$fetch()
     },
     onSizeChange(total) {

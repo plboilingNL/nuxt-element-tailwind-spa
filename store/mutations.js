@@ -9,9 +9,6 @@ export default {
   SET_SERVER_STATE(state, serverReady) {
     state.serverReady = serverReady
   },
-  SET_AUTH(state, auth) {
-    state.auth = auth
-  },
   // Options
   TOGGLE_SIDEBAR_COLLAPSE(state) {
     state.options.sidebarCollapsed = !state.options.sidebarCollapsed

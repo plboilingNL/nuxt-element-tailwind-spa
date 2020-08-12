@@ -5,7 +5,8 @@ export default function ({ $axios, store }, inject) {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      Authorization: store.state.auth != null ? store.state.auth.token : '',
+      Authorization:
+        store.state.auth.data != null ? store.state.auth.data.token : '',
     },
   })
   //   const baseURL =

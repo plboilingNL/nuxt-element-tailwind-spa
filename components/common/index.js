@@ -1,6 +1,6 @@
 // Auth
-export { default as Login } from './Auth/Login.vue'
-export { default as Signup } from './Auth/Signup.vue'
+// export { default as Login } from './Auth/Login.vue'
+// export { default as Signup } from './Auth/Signup.vue'
 // Layout
 export { default as Navbar } from './Layout/Navbar.vue'
 export { default as Sidebar } from './Layout/Sidebar/Main.vue'
