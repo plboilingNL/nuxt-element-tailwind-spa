@@ -6,36 +6,28 @@
         <h1 class="text-xl font-bold text-light inline-block mr-3">
           {{ $t('users.title') }}
         </h1>
+        <!-- Breadcrumb -->
         <div class="inline-block text-light select-none">
           <nuxt-link to="/">
             <fa :icon="['fas', 'home']" />
           </nuxt-link>
         </div>
-        <nuxt-link to="/users/deleted">
+        <nuxt-link to="/users">
           <el-tooltip
             class="item"
             effect="dark"
-            :content="$t('users.deleted')"
+            :content="$t('users.list')"
             placement="bottom-start"
           >
             <el-button
               class="float-right select-none"
-              type="danger"
+              type="primary"
               size="mini"
-              icon="el-icon-delete"
+              icon="el-icon-document"
               circle
             >
             </el-button>
           </el-tooltip>
-        </nuxt-link>
-        <nuxt-link to="/users/create">
-          <el-button
-            class="float-right mx-3 border-0 bg-theme-2-400 hover:bg-theme-2-500 text-white select-none"
-            size="mini"
-            round
-          >
-            {{ $t('users.add-new') }}
-          </el-button>
         </nuxt-link>
       </el-row>
     </el-container>
