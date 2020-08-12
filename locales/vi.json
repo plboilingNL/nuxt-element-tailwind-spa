@@ -38,10 +38,52 @@
     "header": "Đây là một header",
     "sidebar": "Đây là một sidebar"
   },
-  "secret-text": "Trang này yêu cầu đăng nhập mới thấy được",
-  "random-text": "Đoạn text này dùng biến scss toàn cục trong component riêng",
-  "random-text-2": "Nội dung trang giới thiệu",
-  "random-text-using-grid": "Đoạn văn bản này sử dụng mt-5 (custom scss grid)",
-  "random-text-using-spacing": "Đoạn văn bản này sử dụng sx-10 (custom scss spacing)",
-  "random-text-using-mixin": "Đoạn văn bản này sử dụng centerAbsolute('both') (custom scss mixin)"
+  "users": {
+    "title": "Quản lý người dùng",
+    "add-new": "Thêm mới",
+    "list": "Danh sách người dùng",
+    "delete": "Xóa",
+    "search": "Tìm kiếm người dùng",
+    "deleted": "Danh sách đã xóa",
+    "create": {
+      "title": "Thêm người dùng mới",
+      "name": "Họ và tên",
+      "email": "Địa chỉ email",
+      "password": "Mật khẩu",
+      "avatar": "Ảnh đại diện",
+      "role": "Vai trò",
+      "address": "Địa chỉ",
+      "note": "Ghi chú",
+      "submit": "Thêm mới"
+    },
+    "edit": {
+      "title": "Sửa thông tin người dùng",
+      "name": "Họ và tên",
+      "email": "Địa chỉ email",
+      "password": "Mật khẩu",
+      "avatar": "Ảnh đại diện",
+      "role": "Vai trò",
+      "address": "Địa chỉ",
+      "note": "Ghi chú",
+      "submit": "Cập nhật"
+    }
+  },
+  "components": {
+    "card": {
+      "status": {
+        "since-last-month": "Từ tháng trước"
+      }
+    },
+    "table": {
+      "data": {
+        "title": "Bảng dữ liệu",
+        "list": "Danh sách người dùng",
+        "edit": "Chỉnh sửa",
+        "delete": "Xóa",
+        "search": "Tìm kiếm",
+        "restore": "Hồi phục",
+        "delete-pernamently": "Xóa vĩnh viễn"
+      }
+    }
+  }
 }

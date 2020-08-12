@@ -38,10 +38,51 @@
     "header": "This is a header",
     "sidebar": "This is a sidebar"
   },
-  "secret-text": "This page requires authentication",
-  "random-text": "This text use global scss variable in the component",
-  "random-text-2": "Introduction page content",
-  "random-text-using-grid": "This text's using mt-5 (custom scss grid)",
-  "random-text-using-spacing": "This text's using sx-10 (custom scss spacing)",
-  "random-text-using-mixin": "This text's using centerAbsolute('both') (custom scss mixin)"
+  "users": {
+    "title": "User management",
+    "add-new": "Add new",
+    "list": "Users list",
+    "delete": "Delete user",
+    "search": "Search user",
+    "deleted": "Deleted users",
+    "create": {
+      "title": "Add new user",
+      "name": "User name",
+      "email": "User email",
+      "password": "User password",
+      "avatar": "User profile picture",
+      "role": "User role",
+      "address": "User address",
+      "note": "Note",
+      "submit": "Add user"
+    },
+    "edit": {
+      "title": "Edit user",
+      "name": "User name",
+      "email": "User email",
+      "password": "User password",
+      "avatar": "User profile picture",
+      "role": "User role",
+      "address": "User address",
+      "note": "Note",
+      "submit": "Update user"
+    }
+  },
+  "components": {
+    "card": {
+      "status": {
+        "since-last-month": "Since last month"
+      }
+    },
+    "table": {
+      "data": {
+        "title": "Data table",
+        "edit": "Edit",
+        "delete": "Delete",
+        "search": "Search",
+        "restore": "Restore",
+        "delete-pernamently": "Delete pernamently"
+      }
+    }
+  }
 }

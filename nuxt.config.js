@@ -10,6 +10,10 @@ export default {
    ** See https://nuxtjs.org/api/configuration-target
    */
   target: 'server',
+  server: {
+    port: process.env.NODE_ENV == 'development' ? 3010 : process.env.PORT, // default: 3010
+    host: process.env.NODE_ENV == 'development' ? 'localhost' : process.env.HOST // default: localhost
+  },
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
@@ -107,7 +111,9 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: process.env.NODE_ENV == 'development' ? 'https://5f09ce0c5e512a00161c1183.mockapi.io/api/v1' : process.env.API_URL
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
