@@ -1,8 +1,12 @@
 <template>
-  <ValidationProvider v-slot="{ errors }" :rules="rules">
-    <slot></slot>
+  <ValidationProvider v-slot="{ errors }" :rules="rules" class="relative">
+    <el-form-item :label="label" :for="labelFor" class="mb-0">
+      <slot></slot>
+    </el-form-item>
     <div class="text-danger mb-3">
-      {{ $t(errors[0]) }}
+      <small>
+        {{ $t(errors[0]) }}
+      </small>
     </div>
   </ValidationProvider>
 </template>
@@ -15,6 +19,14 @@ export default {
   },
   props: {
     rules: {
+      type: String,
+      default: '',
+    },
+    label: {
+      type: String,
+      default: '',
+    },
+    labelFor: {
       type: String,
       default: '',
     },

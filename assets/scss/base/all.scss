@@ -7,6 +7,53 @@
 // Do not modify this
 // For color configuration, go to ~/assets/scss/base/utitlities/_variants.scss
 :root {
+
+    /////////////////////////////////////////
+    // Sidebar and navbar color configuration
+    /////////////////////////////////////////
+    --color-sidebar-background: #FFFFFF;
+    --color-sidebar-item: #FFFFFF;
+    --color-sidebar-item-hover: #{$--color-gray-200};
+
+    --color-sidebar-text: #{$--color-gray-600};
+    --color-sidebar-item-hover-text: #{$--color-gray-600};
+    --color-sidebar-text-active: #{$--color-theme-1-600};
+
+    --color-sidebar-header-background: #FFFFFF;
+
+    --color-navbar-background: #{$--color-theme-1};
+    --color-navbar-item: #{$--color-theme-1};
+    --color-navbar-item-hover: #{$--color-theme-1-600};
+
+    --color-navbar-text: #FFFFFF;
+    --color-navbar-item-hover-text: #FFFFFF;
+    --color-navbar-text-active: #FFFFFF;
+    ////////////////////////////////////////////////
+    // End of Sidebar and navbar color configuration
+    ////////////////////////////////////////////////
+
+    --color-theme-1: #{$--color-theme-1};
+    --color-theme-1-100: #{$--color-theme-1-100};
+    --color-theme-1-200: #{$--color-theme-1-200};
+    --color-theme-1-300: #{$--color-theme-1-300};
+    --color-theme-1-400: #{$--color-theme-1-400};
+    --color-theme-1-500: #{$--color-theme-1-500};
+    --color-theme-1-600: #{$--color-theme-1-600};
+    --color-theme-1-700: #{$--color-theme-1-700};
+    --color-theme-1-800: #{$--color-theme-1-800};
+    --color-theme-1-900: #{$--color-theme-1-900};
+
+    --color-theme-2: #{$--color-theme-2};
+    --color-theme-2-100: #{$--color-theme-2-100};
+    --color-theme-2-200: #{$--color-theme-2-200};
+    --color-theme-2-300: #{$--color-theme-2-300};
+    --color-theme-2-400: #{$--color-theme-2-400};
+    --color-theme-2-500: #{$--color-theme-2-500};
+    --color-theme-2-600: #{$--color-theme-2-600};
+    --color-theme-2-700: #{$--color-theme-2-700};
+    --color-theme-2-800: #{$--color-theme-2-800};
+    --color-theme-2-900: #{$--color-theme-2-900};
+
     --color-white: #{$--color-white};
     --color-black: #{$--color-black};
     --color-blue: #{$--color-blue};

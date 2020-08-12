@@ -1,8 +1,8 @@
 <template>
-  <el-header class="p-0">
+  <el-header class="p-0 shadow">
     <!--  -->
     <el-menu
-      class="el-menu-demo"
+      class="navbar border-none"
       mode="horizontal"
       :background-color="backgroundColor"
       :text-color="textColor"
@@ -17,67 +17,67 @@
         {{ $t('navbar.dashboard') }}
       </el-menu-item>
       <!-- Login button -->
-      <el-submenu style="float: right;" class="no-caret" index="3">
+      <el-submenu class="no-caret float-right navbar-submenu" index="3">
         <template slot="title">
           <el-avatar size="small" :src="avatar" class="bg-none"></el-avatar>
           <span class="ml-3">{{ username }}</span>
         </template>
-        <el-menu-item
-          v-if="$store.state.auth && $route.path != '/login'"
-          index="3-1"
-          :title="$t('navbar.logout')"
-          @click="$store.dispatch('logout')"
-        >
+        <el-menu-item index="3-1" :title="$t('navbar.logout')" @click="logout">
           {{ $t('navbar.logout') }}
-        </el-menu-item>
-        <el-menu-item
-          v-if="!$store.state.auth && $route.path != '/login'"
-          index="3-2"
-          :title="$t('navbar.login')"
-          @click="$root.$emit('showLoginDialog')"
-        >
-          {{ $t('navbar.login') }}
         </el-menu-item>
       </el-submenu>
       <!-- i18n button -->
-      <el-menu-item
-        v-if="locale == 'en'"
-        size="sm"
-        class="bg-red float-right"
-        title="Đổi sang tiếng Việt"
-        @click="changeLanguage('vi')"
+      <el-tooltip
+        class="item"
+        effect="dark"
+        content="Đổi sang tiếng Việt"
+        placement="bottom-start"
       >
-        <i class="el-icon-star-on text-yellow m-0"></i>
-      </el-menu-item>
-      <el-menu-item
-        v-if="locale == 'vi'"
-        size="sm"
-        class="bg-blue float-right"
-        title="Switch to English"
-        @click="changeLanguage('en')"
+        <el-menu-item
+          v-if="locale == 'en'"
+          size="sm"
+          class="bg-red float-right"
+          @click="changeLanguage('vi')"
+        >
+          <i class="el-icon-star-on text-yellow m-0"></i>
+        </el-menu-item>
+      </el-tooltip>
+      <el-tooltip
+        class="item"
+        effect="dark"
+        content="Switch to English"
+        placement="bottom-start"
       >
-        <fa :icon="['fas', 'globe-americas']" class="mx-1" />
-      </el-menu-item>
+        <el-menu-item
+          v-if="locale == 'vi'"
+          size="sm"
+          class="bg-blue float-right"
+          @click="changeLanguage('en')"
+        >
+          <fa :icon="['fas', 'globe-americas']" class="mx-1" />
+        </el-menu-item>
+      </el-tooltip>
     </el-menu>
   </el-header>
 </template>
 
 <script>
 import { mapMutations, mapState } from 'vuex'
+import { rootActions, rootMutations } from '~/constants/vuex'
 export default {
   name: 'Navbar',
   props: {
     backgroundColor: {
       type: String,
-      default: '#343A40',
+      default: 'var(--color-navbar-background)',
     },
     textColor: {
       type: String,
-      default: '#FFFFFF',
+      default: 'var(--color-navbar-text)',
     },
     activeTextColor: {
       type: String,
-      default: '#FFFFFF',
+      default: 'var(--color-navbar-text-active)',
     },
   },
   data() {
@@ -108,8 +108,8 @@ export default {
   },
   methods: {
     ...mapMutations({
-      SET_LANG: 'SET_LANG',
-      TOGGLE_SIDEBAR_COLLAPSE: 'TOGGLE_SIDEBAR_COLLAPSE',
+      SET_LANG: rootMutations.SET.LANG,
+      TOGGLE_SIDEBAR_COLLAPSE: rootMutations.TOGGLE.SIDEBAR_COLLAPSE,
     }),
     changeLanguage(locale) {
       this.SET_LANG(locale) // store in state and localStorage
@@ -117,6 +117,10 @@ export default {
     },
     handleSelect(key, keyPath) {
       console.log(key, keyPath)
+    },
+    logout() {
+      this.$store.dispatch(rootActions.LOGOUT)
+      this.$router.push('/login')
     },
   },
 }

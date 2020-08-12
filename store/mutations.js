@@ -12,4 +12,8 @@ export default {
   SET_AUTH(state, auth) {
     state.auth = auth
   },
+  // Options
+  TOGGLE_SIDEBAR_COLLAPSE(state) {
+    state.options.sidebarCollapsed = !state.options.sidebarCollapsed
+  },
 }

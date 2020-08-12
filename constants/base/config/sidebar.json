@@ -3,22 +3,26 @@
         {
             "title": "sidebar.user.title",
             "icon": "el-icon-user-solid",
-            "to": "/",
-            "children" : [
+            "icon-color": "var(--color-warning)",
+            "to": "/users",
+            "children": [
                 {
                     "title": "sidebar.user.available",
-                    "icon": "el-icon-user-solid",
+                    "icon": "el-icon-check",
+                    "icon-color": "var(--color-success)",
                     "to": "/users",
                     "children": [
                         {
                             "title": "sidebar.user.list",
                             "icon": "el-icon-info",
+                            "icon-color": "var(--color-primary)",
                             "to": "/users",
                             "children": []
                         },
                         {
                             "title": "sidebar.user.create",
                             "icon": "el-icon-circle-plus",
+                            "icon-color": "var(--color-success)",
                             "to": "/users/create",
                             "children": []
                         }
@@ -27,6 +31,7 @@
                 {
                     "title": "sidebar.user.deleted",
                     "icon": "el-icon-delete-solid",
+                    "icon-color": "var(--color-danger)",
                     "to": "/users/deleted",
                     "children": [
                         {
@@ -42,6 +47,7 @@
         {
             "title": "sidebar.settings.title",
             "icon": "el-icon-s-tools",
+            "icon-color": "var(--color-gray-600)",
             "to": "/settings",
             "children": []
         }

@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     submitForm() {
-      this.$emit('onSubmit')
+      this.$emit('my-form-submit')
     },
   },
 }

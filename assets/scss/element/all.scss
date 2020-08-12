@@ -1,3 +1,5 @@
+@import './components/loading';
+@import './components/footer';
 @import './components/menu';
 @import './theme/fonts';
 @import './theme/colors';
@@ -7,4 +9,8 @@
     .el-submenu__icon-arrow {
         display: none !important;
     }
+}
+
+button:focus {
+    outline: none !important;
 }

@@ -1,6 +1,6 @@
 <template>
-  <el-menu-item :index="count" :route="{ name: item.to }">
-    <i :class="item.icon"></i>
+  <el-menu-item :index="count" @click="$router.push(item.to)">
+    <i :class="item.icon" :style="{ color: item['icon-color'] }"></i>
     <span>{{ $t(item.title) }}</span>
   </el-menu-item>
 </template>
